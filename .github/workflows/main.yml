@@ -16,7 +16,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  update:
+  build:
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -56,7 +56,7 @@ jobs:
           wget -O style.css http://orteil.dashnet.org/cookieclicker/style.css
           wget -N -i _jslist.txt -B http://orteil.dashnet.org/cookieclicker/
     
-    - name: Upload a Build Artifact
+      - name: Upload a Build Artifact
   uses: actions/upload-artifact@v3.1.0
   with:
     # Artifact name
