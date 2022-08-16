@@ -39,8 +39,6 @@ jobs:
           
       - name: Update sound files
         run: | 
-          cd ..
-          dir
           cd snd/
           wget --convert-links -O index.html http://orteil.dashnet.org/cookieclicker/snd/
           grep -v PARENTDIR index.html | grep '\[SND' | grep -Po 'a href="\K.*?(?=")' | sed 's/\?.*//' > _sndlist.txt
@@ -48,7 +46,6 @@ jobs:
       
       - name: Update translations
         run: | 
-          cd ..
           cd loc/
           wget --convert-links -O index.html http://orteil.dashnet.org/cookieclicker/loc/
           grep -v PARENTDIR index.html | grep '\[ ' | grep -Po 'a href="\K.*?(?=")' | sed 's/\?.*//' > _loclist.txt
@@ -56,7 +53,6 @@ jobs:
       
       - name: Update JavaScript and HTML files
         run: |
-          cd ..
           wget -O index.html http://orteil.dashnet.org/cookieclicker/
           wget -O style.css http://orteil.dashnet.org/cookieclicker/style.css
           wget -N -i _jslist.txt -B http://orteil.dashnet.org/cookieclicker/
