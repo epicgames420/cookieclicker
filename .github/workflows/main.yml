@@ -40,6 +40,7 @@ jobs:
       - name: Update sound files
         run: | 
           cd ..
+          dir
           cd snd/
           wget --convert-links -O index.html http://orteil.dashnet.org/cookieclicker/snd/
           grep -v PARENTDIR index.html | grep '\[SND' | grep -Po 'a href="\K.*?(?=")' | sed 's/\?.*//' > _sndlist.txt
