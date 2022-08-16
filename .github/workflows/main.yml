@@ -55,7 +55,7 @@ jobs:
           wget -N -i _jslist.txt -B http://orteil.dashnet.org/cookieclicker/
       
       - name: Upload artifact
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v3.1.0
         with:
            name: cookie-clicker
            path: /home/runner/work/cookieclicker/cookieclicker  
